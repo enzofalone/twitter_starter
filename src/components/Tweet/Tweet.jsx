@@ -2,6 +2,7 @@ import * as React from "react"
 import AvatarIcon from "../AvatarIcon/AvatarIcon"
 import { formatLikes } from "../../utils/format"
 import "./Tweet.css"
+import { TweetButton } from "../Navbar/Navbar"
 
 export default function Tweet({ tweet }) {
   return (
@@ -11,9 +12,9 @@ export default function Tweet({ tweet }) {
       </div>
 
       <div className="tweet-content">
-        <TweetUserInfo />
-        <p className="tweet-text"></p>
-        <TweetFooter />
+        <TweetUserInfo name={tweet.name} handle={tweet.handle}/>
+        <p className="tweet-text">{tweet.text}</p>
+        <TweetFooter numComments={tweet.comments} numRetweets={tweet.retweets} numLikes={tweet.likes}/>
       </div>
     </div>
   )

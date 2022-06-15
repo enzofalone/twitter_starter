@@ -6,12 +6,16 @@ import Advertisements from "./components/Advertisements/Advertisements"
 import { codepathUserProfile, firstTweet, navLinks } from "./constants"
 
 export default function App() {
+  const [userProfile, setUserProfile] = React.useState(codepathUserProfile);
+  const [tweets, setTweets] = React.useState([firstTweet]);
+  const [tweetText, setTweetText] = React.useState("");
+
   return (
     <div className="app">
-      <Navbar />
+      <Navbar navLinks={navLinks}/>
       <main>
-        <UserProfile />
-        <Feed />
+        <UserProfile userProfile={userProfile}/>
+        <Feed userProfile={userProfile} tweets={tweets} setTweets={setTweets} tweetText={tweetText} setTweetText={setTweetText}/>
         <Advertisements />
       </main>
     </div>
