@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./AvatarIcon.css"
 
-export default function AvatarIcon() {
+export default function AvatarIcon(props) {
   return (
     <span className="avatar-icon fa-stack">
       <i className="fas fa-circle fa-stack-2x">

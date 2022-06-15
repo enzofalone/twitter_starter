@@ -8,7 +8,7 @@ export default function UserProfile({ userProfile }) {
       <div className="card">
         <div className="card-bg" />
         <CardContent name={userProfile.name} handle={userProfile.handle}/>
-        <CardFooter numTweets={userProfile.numTweets} numFollowers={userProfile.numFollowers}/>
+        <CardFooter numTweets={userProfile.numTweets} numFollowing={userProfile.numFollowing} numFollowers={userProfile.numFollowers}/>
       </div> 
     </div>
     //   
@@ -35,8 +35,10 @@ export function CardFooter(props) {
   return (
     <div className="card-footer">
       <p>Tweets</p>
+      <p>Following</p>
       <p>Followers</p>
       <span className="metric">{props.numTweets ? formatNumTweets(props.numTweets) : null}</span>
+      <span className="metric">{props.numFollowing ? formatNumFollowers(props.numFollowing) : null}</span>
       <span className="metric">{props.numFollowers ? formatNumFollowers(props.numFollowers) : null}</span>
     </div>
   )

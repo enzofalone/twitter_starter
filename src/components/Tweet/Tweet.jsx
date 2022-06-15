@@ -2,7 +2,6 @@ import * as React from "react"
 import AvatarIcon from "../AvatarIcon/AvatarIcon"
 import { formatLikes } from "../../utils/format"
 import "./Tweet.css"
-import { TweetButton } from "../Navbar/Navbar"
 
 export default function Tweet({ tweet }) {
   return (
