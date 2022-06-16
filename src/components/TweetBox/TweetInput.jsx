@@ -2,14 +2,10 @@ import * as React from "react"
 import AvatarIcon from "../AvatarIcon/AvatarIcon"
 
 export default function TweetInput(props) {
-  // const handleOnTweetTextChange = (e) => {
-  //   props.setTweetText(e.target.value)
-  // }
   let [expanded, setExpanded] = React.useState(false);
   let textarea = document.querySelector("textarea");
 
   const inputFocus = (e) => {
-    
     if(!e.target.classList.contains("expanded")){
       setExpanded(true)
       e.target.classList.add("expanded");
@@ -17,7 +13,6 @@ export default function TweetInput(props) {
   }
 
   const inputBlur = (e) => {
-    
     if(e.target.classList.contains("expanded")){
       setExpanded(false)
       e.target.classList.remove("expanded");

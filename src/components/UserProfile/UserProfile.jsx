@@ -7,22 +7,19 @@ export default function UserProfile({ userProfile }) {
     <div className="col user-profile">
       <div className="card">
         <div className="card-bg" />
-        <CardContent name={userProfile.name} handle={userProfile.handle}/>
+        <CardContent picture={userProfile.profilePicture}name={userProfile.name} handle={userProfile.handle}/>
         <CardFooter numTweets={userProfile.numTweets} numFollowing={userProfile.numFollowing} numFollowers={userProfile.numFollowers}/>
       </div> 
     </div>
-    //   
   )
 }
 
 export function CardContent(props) {
   return (
     <div className="card-content">
-      <span className="fa-stack add-picture-icon">
-        <i className="fas fa-camera fa-stack-2x">
-          <i className="fas fa-plus fa-stack-1x"></i>
-        </i>
-      </span>
+      {<span className="fa-stack">
+
+      </span>}
       <div className="twitter-handle">
         <h3>{props.name}</h3>
         <p>@{props.handle}</p>

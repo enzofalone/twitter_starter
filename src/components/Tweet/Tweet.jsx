@@ -3,7 +3,8 @@ import AvatarIcon from "../AvatarIcon/AvatarIcon"
 import { formatLikes } from "../../utils/format"
 import "./Tweet.css"
 
-export default function Tweet({ tweet }) {
+export default function Tweet({ tweet }) { 
+  const [hidden, setHidden] = React.useState("hidden");
   return (
     <div className="tweet" data-tweet-id={null}>
       <div className="tweet-avatar">
@@ -11,9 +12,9 @@ export default function Tweet({ tweet }) {
       </div>
 
       <div className="tweet-content">
-        <TweetUserInfo name={tweet.name} handle={tweet.handle}/>
+        <TweetUserInfo name={tweet.name} handle={tweet.handle} />
         <p className="tweet-text">{tweet.text}</p>
-        <TweetFooter numComments={tweet.comments} numRetweets={tweet.retweets} numLikes={tweet.likes}/>
+        <TweetFooter numComments={tweet.comments} numRetweets={tweet.retweets} numLikes={tweet.likes} />
       </div>
     </div>
   )
@@ -36,15 +37,15 @@ export function TweetUserInfo({ name, handle }) {
 export function TweetFooter({ numComments, numRetweets, numLikes }) {
   return (
     <div className="tweet-footer">
-      <span>
+      <span className="comment">
         <i className="fa fa-comment"></i>
         {numComments || 0}
       </span>
-      <span>
+      <span className="retweet">
         <i className="fa fa-retweet"></i>
         {numRetweets || 0}
       </span>
-      <span>
+      <span className="like">
         <i className="fas fa-heart"></i>
         {formatLikes(numLikes ?? 0)}
       </span>
